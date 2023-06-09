@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: rgb(122, 181, 249);
+        }
+        
+        div{
+            float: left;
+            margin: 10px;
+        }
+
+        .historien{
+            border: 50px;
+            padding: 30px;
+            font-size: 25px;
+            
+        }
+
+        .ordBokser{
+            clear: left;
+        }
+
+        .velg{
+            font-size: 20px;
+            background-color:rgb(208, 81, 202);
+            border: 2px solid rgb(114, 1, 46);
+            border-radius: 90%;
+            padding: 10px;
+            width: 80px;
+            height: 30px;
+            text-align: center;
+        }
+
+        .ord{
+            
+        }
+     </style>
+</head>
+<body>
+    <div class="historien" id="histOutput"></div>
+
+
+<div class="ord">
+    <div class="ordBokser velg" onclick="velgFørsteOrd(this)">vakker</div>
+    <div class="velg" onclick="velgFørsteOrd(this)">fæl</div>
+
+    <div class="ordBokser velg" onclick="velgAndreOrd(this)">kult</div>
+    <div class="velg" onclick="velgAndreOrd(this)">slemt</div>
+
+    <div class="ordBokser velg" onclick="velgTredjeOrd(this)">ordentlig</div>
+    <div class="velg" onclick="velgTredjeOrd(this)">falsk</div>
+
+    <div class="ordBokser velg" onclick="velgFjerdeOrd(this)">smart</div>
+    <div class="velg" onclick="velgFjerdeOrd(this)">dum</div>
+</div>
+
+    <script>
+        const output = document.getElementById("histOutput")
+        let firstWord = "_____";
+        let secondWord = "_____";
+        let thirdWord = "_____";
+        let fourthWord = "_____";
+        adjHistorie();
+
+        function adjHistorie(){
+            output.innerHTML = `
+            Det var en gang en ${firstWord} kvinne som alltid gjorde noe ${secondWord}.
+            Hun var som regel ${thirdWord}, men ikke alltid så ${fourthWord}. Slutt.`;
+        }
+
+        function velgFørsteOrd(velg){
+            firstWord = velg.innerHTML;
+            adjHistorie();
+        }
+
+        function velgAndreOrd(velg){
+            secondWord = velg.innerHTML;
+            adjHistorie();
+        }
+
+        function velgTredjeOrd(velg){
+            thirdWord = velg.innerHTML;
+            adjHistorie();
+        }
+
+        function velgFjerdeOrd(velg){
+            fourthWord = velg.innerHTML;
+            adjHistorie();
+        }
+    </script>
+</body>
+</html>

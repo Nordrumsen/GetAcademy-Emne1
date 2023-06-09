@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: gray;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        
+    </div>
+    
+
+    <script>
+        let bryterPå = false;
+
+        updateView();
+        function updateView(){
+            let html = /*html*/`
+            <button onclick="bryter()">Lysbryter</button>
+            `;
+            document.getElementById('app').innerHTML = html;
+        }
+
+        function bryter(){
+            bryterPå = !bryterPå; //bryterpå = det motsatte av hva den er nå
+            let bakgrunnsfarge = bryterPå ? "yellow" : "gray"; //turnary operator
+            document.body.style.backgroundColor = bakgrunnsfarge;
+
+            // "!bryter" er det samme som å srkive at noe er true og false. 
+            
+
+            /*
+            For å sjekke om noe er true kan man bare skrive navnet på variablen. F.eks:
+            if (variabel)
+            Og for å sjekke om noe er false kan man gjøre det samme med et utropstegn foran. F.eks:
+            if (!variabel)
+            == false og == true er unødvendig.
+            */
+        }
+
+
+
+    </script>
+</body>
+</html>

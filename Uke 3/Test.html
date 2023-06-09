@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teamoppg Test</title>
+    <style>
+    
+        body {
+            display: grid;
+            grid-template-columns: 50% 50%;
+            grid-template-rows: 15%;
+            grid-template-areas: 
+                'topl topr'
+                'left right';
+            background-color: rgb(104, 186, 237);
+
+        }
+        .left {
+            grid-area: left;
+        }
+        .right {
+            grid-area: right;
+        }
+        .topl {
+            grid-area: topl;
+            margin-top: 0;
+            text-align: center;
+            width: 231;
+            margin-bottom: 5px;
+            margin-left: 10px;
+            border: 2px solid;
+                
+        }
+        .topr {
+            grid-area: topr;
+            margin-top: 0;
+            text-align: center;
+            width: 231;
+            margin-bottom: 5px;
+            margin-left: 10px;
+            border: 2px solid;
+                
+        }
+
+
+        div {
+            background-color: rgba(0, 4, 4, 0.4);
+            padding: 5px;
+            border: solid;
+            width: 231px;
+            height: 231px;
+        }
+
+        .vest {
+            padding: 5px;
+            border: solid;
+        }
+
+        .maske {
+            padding: 5px;
+            border: solid;
+        }
+
+        .lue {
+            padding: 5px;
+            border: solid;
+        }
+
+        .hette {
+            padding: 5px;
+            border: solid;
+        }
+
+       
+     </style>
+
+</head>
+
+<body>
+    <div class="img">
+        <img id="1" class="vest" src="item1.png" height="100" onclick="add('1')">
+        <img id="2" class="maske" src="item2.png" height="100" onclick="add('2')">
+        <img id="3" class="lue" src="item3.png" height="100" onclick="add('3')">
+        <img id="4" class="hette" src="item4.png" height="100" onclick="add('4')">
+    </div>
+    <div class="topr"></div>
+    
+    
+
+
+    <p></p>
+    
+    <script>
+        function add(ok) {
+            document.getElementById(ok).style.visibility="hidden"
+            document.getElementById(ok).style.visibility="hidden"
+
+        }
+
+        
+    </script>
+
+</body>
+
+</html>

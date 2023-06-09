@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app"></div>
+
+    `<div class="textbox">Rundkjøring, hvilken vei kjører du?</div>
+    <button onclick="rundkjøring('første')">Første avkjøring</button>
+    <button onclick="rundkjøring('andre')">Andre avkjøring</button>
+    <button onclick="rundkjøring('tredje')">Tredje avkjøring</button>`
+
+
+    `<div class="textbox">Du ser kompisen din Knut langs veien, hils på den riktige måten</div>
+    <button onclick="hilsen('plystre')">Plystre på han</button>
+    <button onclick="hilsen('nikk')">Nikk med hodet</button>
+    <button onclick="hilsen('finger')">Vis fingeren</button>`
+
+
+    `<div class="textbox">Du ser at noe ligger i veikanten, hva gjør du?</div>
+    <button onclick="finner('plukk')">Stopper og plukker opp</button>
+    <button onclick="finner('forbi')">Kjører forbi</button>
+    <button onclick="finner('ikkeDødt')">Håper at det ikke er et dødt dyr, men plukker opp uansett</button>`
+    
+    `<div class="textbox">Du plukket opp en spoiler!</div>
+    <button onclick="spoiler('spoiler')">Sett den på bilen</button>
+  
+    
+
+
+
+
+
+
+
+    <script>
+        function rundkjøring(parameter){
+            if(parameter == 'første'){
+                document.getElementById('app').innerHTML = rareEvents[rndm(rareEvents.length)]
+            }
+            else if(parameter == 'andre'){
+                document.getElementById('app').innerHTML = rareEvents[rndm(rareEvents.length)]
+            }
+            else{
+                document.getElementById('app').innerHTML = rareEvents[rndm(rareEvents.length)]
+            }
+        }
+
+        function hilsen(parameter){
+            if(parameter == 'finger'){
+                document.getElementById('app').innerHTML = rareEvents[rndm(rareEvents.length)]
+                kulhet += 5
+            }   
+            else{
+                kulhet -= 5
+            }
+        }
+
+        function finner(parameter){
+            if(parameter == 'plukk' || 'ikkeDødt')
+            document.getElementById('app').innerHTML = specificEvents[3]
+            else{
+                document.getElementById('app').innerHTML = mainEvents[rndm(mainEvents.length)]
+            }
+        }
+
+        function spoiler(parameter){
+            if(parameter == 'spoiler'){
+                kulhet += 10
+            }
+        }
+
+            
+        
+    </script>
+
+</body>
+</html>

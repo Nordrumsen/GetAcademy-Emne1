@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SoundBoard</title>
+
+    <style>
+        .knp{
+            width: 150px;
+            height: 150px;
+            text-align: center;
+            margin: 5px;
+            background-color: rgb(214, 74, 120);
+
+        }
+
+        .img{
+            width: 130px;
+            height: 130px;
+
+        }
+    </style>
+
+</head>
+
+<body>
+    <button class="knp" onclick="memeEn()"><img class="img" src="meme1.jpg"></button>
+    <button class="knp" onclick="memeTo()"><img class="img" src="meme2.jpg"></button>
+    <button class="knp" onclick="memeTre()"><img class="img" src="meme3.jpg"></button>
+    <button class="knp" onclick="memeFire()"><img class="img" src="meme4.jpg"></button>
+    <button class="knp" onclick="memeFem()"><img class="img" src="meme5.jpg"></button>
+
+    <br>
+
+    <button class="knp" onclick="memeSeks()"><img class="img" src="meme6.jpg"></button>
+    <button class="knp" onclick="memeSyv()"><img class="img" src="meme7.jfif"></button>
+    <button class="knp" onclick="memeÅtte()"><img class="img" src="meme8.jpg"></button>
+    <button class="knp" onclick="memeNi()"><img class="img" src="meme9.png"></button>
+    <button class="knp" onclick="memeTi()"><img class="img" src="memer.webp"></button>
+    
+</body>
+
+<script>
+    function memeEn(){
+        new Audio("meme1.mp3").play();
+    }
+
+    function memeTo(){
+        new Audio("meme2.mp3").play();
+    }
+
+    function memeTre(){
+        new Audio("meme3.mp3").play();
+    }
+
+    function memeFire(){
+        new Audio("meme4.mp3").play();
+    }
+
+    function memeFem(){
+        new Audio("meme5.mp3").play();
+    }
+
+    function memeSeks(){
+        new Audio("meme6.mp3").play();
+    }
+
+    function memeSyv(){
+        new Audio("meme7.mp3").play();
+    }
+
+    function memeÅtte(){
+        new Audio("meme8.mp3").play();
+    }
+
+    function memeNi(){
+        new Audio("meme9.mp3").play();
+    }
+
+    function memeTi(){
+        let rnd = Math.floor(Math.random()*9);
+        if(rnd == 1){
+            memeEn();
+        }
+        else if (rnd == 2){
+            memeTo();
+        }
+        else if (rnd == 3){
+            memeTre();
+        }
+        else if (rnd == 4){
+            memeFire();
+        }
+        else if (rnd == 5){
+            memeFem();
+        }
+        else if (rnd == 6){
+            memeSeks();
+        }
+        else if (rnd == 7){
+            memeSyv();
+        }
+        else if (rnd == 8){
+            memeÅtte();
+        }
+        else{
+            memeNi();
+        }
+    }
+
+</script>
+
+</html>

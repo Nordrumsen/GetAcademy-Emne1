@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MVC Teamoppg</title>
+</head>
+
+<body>
+
+    <div id="app"></div>
+
+    <script>
+        //model
+        let ma = 100;
+        let tø = 100;
+        let le = 100;
+        let he = 100;
+        let deadsound = new Audio("dead.mp3");
+
+        //view
+        updateView()
+        function updateView() {
+            document.getElementById('app').innerHTML = /*HTML*/`
+            <img src="https://cdn.discordapp.com/attachments/1062368663484780597/1062713953144279142/IMG_1683.JPG" width="200">
+            <p>
+            <button onclick="startTimer(this)">Start spill</button>
+            </p>
+                
+            <div class="box">${ma}</div>
+            <button onclick="addFem()">Mat</button>
+                
+            <p>
+                    
+            <div class="box">${tø}</div>
+            <button onclick="addFem1()">Drikke</button>
+                    
+            </p>
+                    
+            <div class="box">${le}</div>
+            <button onclick="addTi()">Leke</button>
+                    
+            <p>
+                        
+            <div class="box">${he}</div>
+            <button onclick="addHundre()">Helse</button>
+                        
+            </p>
+                        
+   
+        `;
+        }
+
+
+        //controller
+         function startTimer(slutt) {
+             setInterval(telleMa, 200);
+             setInterval(telleTø, 100);
+             setInterval(telleLe, 150);
+             setInterval(telleHe, 150);
+             slutt.disabled = true
+         }
+        
+        function telleMa(){
+            if (ma > 0){
+                ma--;
+                updateView()
+            }
+        }
+
+        function telleHe() {
+            helseGår.innerHTML = he;
+            if (ma < 25 || tø < 25 || le < 25){
+                if(he > 0)
+                he--;
+            }
+            else if (ma > 75 && tø > 75 && le > 75)
+                if (he < 100)
+                    he++;
+             if (he == 0) {
+                helseGår.innerHTML = 'Pusen er død!';
+                return duErDødLyd();
+            } 
+            
+        }
+    </script>
+
+
+
+</body>
+<style>
+    .box {
+        border: solid;
+        width: 150px;
+        height: 20px;
+    }
+</style>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teamoppgave Inventory</title>
+    <style>
+        body {
+            display: grid;
+            grid-template-columns: 50% 50%;
+            grid-template-rows: 15%;
+            grid-template-areas:
+                'topl topr'
+                'left right';
+            background-color: lightskyblue;
+            height: 270px;
+            width: 500px;
+        }
+        .left {
+            grid-area: left;
+        }
+        .right {
+            grid-area: right;
+        }
+        .topl {
+            grid-area: topl;
+            margin-top: 0;
+            text-align: center;
+            width: 200px;
+            margin-bottom: 5px;
+            border: 2px solid;
+        }
+        .topr {
+            grid-area: topr;
+            margin-top: 0;
+            text-align: center;
+            width: 70px;
+            margin-bottom: 5px;
+            margin-left: 10px;
+            border: 2px solid;
+        }
+        .toprr {
+            margin-left: 120px;
+        }
+        .div {
+            background-color: rgba(0, 0, 0, 0.223);
+            padding: 10px;
+            border: solid 3px;
+            border-color: rgb(78, 64, 92);
+        }
+        .img {
+            border: solid;
+            background-color: rgb(106, 140, 129);
+        }
+        .ground {
+            background-color: rgb(106, 105, 103);
+            width: 200px;
+            height: 200px;
+        }
+        .bag {
+            background-color: rgb(145, 124, 107);
+            width: 200px;
+            height: 200px;
+        }
+        .backpack {
+            background-image: url(backback.png);
+            background-repeat: no-repeat;
+            background-position: bottom right;
+            width: 200px;
+            height: 200px;
+        }
+        img {
+            height: 100px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="topl div">Loot</div>
+    <div class="topr div" onclick="openBag()">Open</div>
+    <div class="topr toprr div" onclick="closeBag()">Close</div>
+
+    <div class="ground left div" id="loot"></div>
+    <div class="bag right div" id="bagen"></div>
+    <div class="backpack right" id="backbackid" onclick="openBag()"></div>
+
+    <script>
+        document.getElementById('bagen').style.visibility='hidden';
+       
+        function closeBag(){
+            document.getElementById('bagen').style.visibility='hidden';
+            document.getElementById('backbackid').style.visibility='visible';
+        }
+        function openBag(){
+            document.getElementById('bagen').style.visibility='visible';
+            document.getElementById('backbackid').style.visibility='hidden';
+        }
+
+        let img1 = document.createElement('img'); //Definerer en variabel som heter img#, lager et 'img' element
+        img1.addEventListener("click", pickUp1);  //Ber variablen høre etter "click", og kaller pickUp# funksjonen
+        img1.src = "item1.png";                   //Forteller img# hva filen til bildet heter (må ligge i samme mappe som koden)
+        let img2 = document.createElement('img');
+        img2.addEventListener("click", pickUp2);
+        img2.src = "item2.png"
+        let img3 = document.createElement('img');
+        img3.addEventListener("click", pickUp3);
+        img3.src = "item3.png"
+        let img4 = document.createElement('img');
+        img4.addEventListener("click", pickUp4);
+        img4.src = "item4.png"
+
+        document.getElementById('loot').append(img1, img2, img3, img4) //Legger variablene i 'loot'
+
+        function pickUp1() {                                //Lager funksjoner som legger img# i 'bagen'
+            document.getElementById('bagen').append(img1)
+        }
+        function pickUp2() {
+            document.getElementById('bagen').append(img2)
+        }
+        function pickUp3() {
+            document.getElementById('bagen').append(img3)
+        }
+        function pickUp4() {
+            document.getElementById('bagen').append(img4)
+        }
+
+    </script>
+
+</body>
+
+</html>

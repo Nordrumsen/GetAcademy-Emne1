@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crocodile game</title>
+
+    <style>
+        img {
+            height: 150px;
+            width: 150px;
+        }
+    
+        input {
+            width: 10px;
+        }
+
+        .app{
+            display: flex;
+
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="app"></div>
+
+    <script>
+        //model
+        let firstNum = 0;
+        let secNum = 0;
+        let poeng = 0;
+
+        //view
+        updateNumbers()
+        updateView()
+        function updateView() {
+            document.getElementById('app').innerHTML = /*HTML*/`
+            <img src = "Croc.webp"/>
+            <div>Poeng: ${poeng}</div>
+            <div class="app">
+            <div>${firstNum}</div> 
+            <input id="svarBoks" type="text">
+            <div>${secNum}</div>
+            </div>
+            <button onclick="submit()">Submit</button>
+            <button onclick="reset()">Reset</button>
+            `;
+        }
+        //control
+        function updateNumbers() {
+            firstNum = getRandomNumber();
+            secNum = getRandomNumber();
+        }
+
+        function getRandomNumber() {
+            return Math.ceil(Math.random() * 10);
+        }
+
+        function reset() {
+            poeng=0;
+            updateNumbers()
+            updateView()
+        }
+
+        function submit() {
+            let svar = document.getElementById("svarBoks").value;
+            if (svar == "<") {
+                if (firstNum < secNum) {
+                    poeng++;
+                } 
+                else {
+                    poeng--;
+                }
+            }
+            else if (svar == ">"){
+                if (firstNum > secNum) {
+                    poeng++;
+                }
+                else {
+                    poeng--;
+                }
+            }
+            else if (svar == "="){
+                if (firstNum == secNum){
+                    poeng++;
+                }
+                else{
+                    poeng--;
+                }
+            }
+            else {
+                alert('< = > only')
+            }
+            updateNumbers()
+            updateView()
+        }
+    
+    </script>
+</body>
+
+
+</html>

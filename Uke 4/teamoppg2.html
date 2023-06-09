@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teamoppg 2</title>
+    <style>
+        .sulten{
+            border: solid;
+            width: 300px;
+            height: 20px;
+        }
+        .drikke{
+            border: solid;
+            width: 300px;
+            height: 20px;
+        }
+        .lek{
+            border: solid;
+            width: 300px;
+            height: 20px;
+        }
+
+        .syk{
+            border: solid;
+            width: 300px;
+            height: 20px;
+        }
+    </style>
+</head>
+<body>
+    <img src="https://cdn.discordapp.com/attachments/1062368663484780597/1062713953144279142/IMG_1683.JPG" width="200"> 
+
+       <div id="matId" class="sulten" onclick=""></div>
+        <button id= "sult" onclick="startTimer()">Mat</button>
+
+        <p>
+
+        <div id="tørstId" class="drikke"></div>
+        <button onclick="startTimer()">Drikke</button>
+
+        </p>
+
+         <div id="lekId" class="lek"></div>
+        <button onclick="startTimer()">Leke</button>
+
+        <p>
+
+        <div id="sykId" class="syk"></div>
+        <button onclick="startTimer()">Medisin</button>
+
+        </p>
+    
+
+    <script>
+        
+    /* var sult = document.getElementById('sult')
+    var numSult = 0;
+
+    var tørst = document.getElementById('tørst')
+    var numTørst = 0;
+
+    var lek = document.getElementById('lek')
+    var numLek = 0;
+
+    var syk = document.getElementById('syk')
+    var numSyk = 0; */
+
+    let tidenGår = document.getElementById ('matId', 'tørstId')
+    let secounds = 100;
+
+    setInterval()
+
+    function startTimer(){
+        setInterval(countSecounds, 1000);
+
+    }
+
+    function countSecounds(){
+        tidenGår.innerHTML = secounds;
+        secounds--;
+    }
+
+    
+
+    </script>
+    
+
+    
+
+
+
+</body>
+</html>
